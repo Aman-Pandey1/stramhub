@@ -61,13 +61,11 @@ if (Test-Path (Join-Path $appRoot 'package-lock.json')) {
 Write-Host "==> npm install" -ForegroundColor Cyan
 npm install --registry https://registry.npmjs.org/
 
-$buildGradle = Join-Path $appRoot 'android\app\build.gradle'
-if (Test-Path $buildGradle) {
-  $raw = Get-Content $buildGradle -Raw
-  $raw = $raw -replace 'applicationId "[^"]+"', 'applicationId "com.streamhub.mobile"'
-  $raw = $raw -replace 'namespace "[^"]+"', 'namespace "com.streamhub.mobile"'
-  Set-Content -Path $buildGradle -Value $raw -NoNewline
-}
+  $buildGradle = Join-Path $appRoot 'android\app\build.gradle'
+  if (Test-Path $buildGradle) {
+    # keep namespace aligned with Kotlin package (com.streamhub)
+    Write-Host "==> applicationId left as generated (com.streamhub)" -ForegroundColor Cyan
+  }
 
 Write-Host "==> Cleanup temp" -ForegroundColor Cyan
 Remove-Item -Recurse -Force $tempDir -ErrorAction SilentlyContinue
