@@ -5,7 +5,6 @@ type Props = {
   className?: string;
 };
 
-/** Side tab used on mobile rails (Stories / Playlists). */
 export function VerticalRailLabel({ label, className }: Props) {
   return (
     <div

@@ -43,7 +43,6 @@ export const stories: StoryItem[] = [
   },
 ];
 
-/** Desktop "create story" prepended at the call site when needed */
 export const createStory: StoryItem = {
   id: 'create',
   username: 'Create new',

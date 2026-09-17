@@ -11,6 +11,7 @@ import {
   LayoutGrid,
   Video,
 } from 'lucide-react';
+import { SITE } from '@/config/site';
 import { cn } from '@/lib/cn';
 
 const items = [
@@ -31,9 +32,9 @@ export function Sidebar() {
       <Link
         href="/"
         className="mb-6 flex h-10 w-10 items-center justify-center rounded-xl bg-brand text-sm font-bold text-white"
-        aria-label="StreamHub home"
+        aria-label={`${SITE.name} home`}
       >
-        S
+        {SITE.brandLetter}
       </Link>
 
       <nav className="flex flex-1 flex-col items-center gap-1">

@@ -1,35 +1,8 @@
 # StreamHub
 
-Creator streaming UI — separate web and mobile frontends.
-
 ```
-test/
-├── web-frontend/    # Next.js
-└── mobile-app/      # React Native CLI (no Expo)
+web-frontend/   Next.js
+mobile-app/     React Native CLI
 ```
 
-## Web (Next.js)
-
-```bash
-cd web-frontend
-npm install
-npm run dev
-```
-
-## Mobile (React Native CLI)
-
-```powershell
-cd mobile-app
-.\scripts\init-rn-cli.bat
-npm start
-npm run android
-```
-
-Debug APK:
-
-```powershell
-cd mobile-app\android
-.\gradlew.bat assembleDebug
-```
-
-Output: `android\app\build\outputs\apk\debug\app-debug.apk`
+Feature modules + repositories on both sides. Mocks live under `data/` until a real API is wired.

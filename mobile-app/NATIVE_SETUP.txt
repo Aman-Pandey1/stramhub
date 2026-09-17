@@ -1,2 +1,0 @@
-# android/ + ios/ yahan `init-rn-cli` se aayenge.
-# Run: .\scripts\init-rn-cli.bat

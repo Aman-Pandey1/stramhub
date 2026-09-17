@@ -1,52 +1,24 @@
-# StreamHub Web (Next.js)
+# StreamHub Web
 
-Desktop web frontend for StreamHub — Home and Profile screens.
+Next.js 14 app (App Router) — Home + Profile.
 
-## Stack
+## Layout
 
-- Next.js 14 (App Router)
-- TypeScript
-- Tailwind CSS
-- lucide-react
+```
+src/
+  app/                 routes
+  features/            page compositions (home, profile)
+  components/          reusable UI pieces
+  repositories/        data access (mock → API later)
+  data/                mock payloads
+  types/               domain types
+  config/              site constants
+  lib/                 tiny helpers (cn, routes)
+```
 
-## Setup
+## Run
 
 ```bash
 npm install
 npm run dev
 ```
-
-App runs at [http://localhost:3000](http://localhost:3000).
-
-| Route | Screen |
-|-------|--------|
-| `/` | Home |
-| `/profile` | Profile |
-
-## Scripts
-
-| Command | Description |
-|---------|-------------|
-| `npm run dev` | Local development |
-| `npm run build` | Production build |
-| `npm run start` | Serve production build |
-| `npm run lint` | ESLint |
-| `npm run typecheck` | TypeScript check |
-
-## Structure
-
-```
-src/
-  app/                 # routes (page.tsx, layout, globals)
-  components/
-    layout/            # AppShell, Sidebar, Header
-    home/              # home sections
-    profile/           # profile sections
-    shared/            # StoryCircle, VideoThumbnail, CategoryCard
-    ui/                # primitives (Button)
-  data/                # fixture / mock content
-  types/               # shared domain types
-  lib/                 # helpers (cn, formatting)
-```
-
-Mock media is loaded from Unsplash / pravatar. Swap `src/data/fixtures.ts` when wiring a real API.
